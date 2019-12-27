@@ -14,12 +14,12 @@ docker run \
   --volume=/var/lib/drone:/data \
   --env=DRONE_AGENTS_ENABLED=true \
   --env=DRONE_GITHUB_SERVER=https://github.com \
-  --env=DRONE_GITHUB_CLIENT_ID=f13429f784f3315391b3 \
-  --env=DRONE_GITHUB_CLIENT_SECRET=929dff15b90c1c8de2f487622c47f2eb02003c09 \
+  --env=DRONE_GITHUB_CLIENT_ID=415be3ed6b1dd8a95125 \
+  --env=DRONE_GITHUB_CLIENT_SECRET=79e198de9df94853e3273e64a22b9206387a57cb \
   --env=DRONE_RPC_SECRET=9a3e564e1d6d8649d4111f14332c0292 \
   --env=DRONE_SERVER_HOST=111.229.81.101 \
   --env=DRONE_SERVER_PROTO=http \
-  --publish=80:80 \
+  --publish=82:80 \
   --publish=443:443 \
   --restart=always \
   --detach=true \
