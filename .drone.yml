@@ -15,6 +15,11 @@ steps:
       - npm run test
 
   - name: build
+    image: node:alpine
+    commands:
+      - npm run build
+
+  - name: rsync
     image: drillster/drone-rsync
     environment:
       RSYNC_KEY:
@@ -26,5 +31,3 @@ steps:
       source: .vuepress/dist/*
       target: /root/docs
       secrets: [ rsync_key ]
-    commands:
-      - npm run build
