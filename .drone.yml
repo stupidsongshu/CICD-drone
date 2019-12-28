@@ -39,6 +39,7 @@ steps:
       target:
         - /root/docs
       rm: true
+      key_path: /root/.ssh/ssh_key
       secrets:
         - source: deploy_key
           target: ssh_key
