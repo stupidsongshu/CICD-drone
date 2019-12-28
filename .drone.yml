@@ -36,6 +36,7 @@ steps:
       target: /root/docs
       source:
         - .vuepress/dist/*
+      secrets: [ rsync_key ]
 
   # - name: rsync production
   #   image: drillster/drone-rsync
