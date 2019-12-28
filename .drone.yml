@@ -20,9 +20,9 @@ steps:
       - npm run build
       - ls -al
       # - echo $USER
-      - rm -rf /root/docs
-      - mkdir /root/docs
-      - cp -r .vuepress/dist/* /root/docs
+      # - rm -rf /root/docs
+      # - mkdir /root/docs
+      # - cp -r .vuepress/dist/* /root/docs
 
   # - name: rsync production
   #   image: drillster/drone-rsync
@@ -36,3 +36,15 @@ steps:
   #     source: .vuepress/dist/*
   #     target: /root/docs
   #     secrets: [ rsync_key ]
+
+  - name: scp files
+  image: appleboy/drone-scp
+  settings:
+    host:
+      - 111.229.81.101
+    username: root
+    password:
+      - from_secret: rsync_key
+    port: 22
+    target: /root/docs
+    source: .vuepress/dist/*
