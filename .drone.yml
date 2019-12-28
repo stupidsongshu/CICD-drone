@@ -36,7 +36,9 @@ steps:
       target: /root/docs
       source:
         - .vuepress/dist/*
-      secrets: [ rsync_key ]
+      secrets: 
+        - source: deploy_key 
+          target: scp_key
 
   # - name: rsync production
   #   image: drillster/drone-rsync
