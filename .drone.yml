@@ -24,6 +24,19 @@ steps:
       # - mkdir /root/docs
       # - cp -r .vuepress/dist/* /root/docs
 
+  - name: scp files
+    image: appleboy/drone-scp
+    settings:
+      host:
+        - 111.229.81.101
+      username: root
+      password:
+        from_secret: rsync_key
+      port: 22
+      target: /root/docs
+      source:
+        - .vuepress/dist/*
+
   # - name: rsync production
   #   image: drillster/drone-rsync
   #   environment:
@@ -37,14 +50,3 @@ steps:
   #     target: /root/docs
   #     secrets: [ rsync_key ]
 
-  - name: scp files
-  image: appleboy/drone-scp
-  settings:
-    host:
-      - 111.229.81.101
-    username: root
-    password:
-      - from_secret: rsync_key
-    port: 22
-    target: /root/docs
-    source: .vuepress/dist/*
