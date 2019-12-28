@@ -40,3 +40,6 @@ docker run -d \
   --name runner \
   drone/drone-runner-docker:1
 ```
+- rsync
+  - [rsync drone plugin](http://plugins.drone.io/drillster/drone-rsync/)
+  - [rsync github](https://github.com/drillster/drone-rsync)
