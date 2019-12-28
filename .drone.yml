@@ -19,13 +19,12 @@ steps:
     commands:
       - npm run build
 
-  - name: rsync
+  - name: rsync production
     image: drillster/drone-rsync
     environment:
       RSYNC_KEY:
         from_secret: rsync_key
     settings:
-      user: root
       hosts:
         - 111.229.81.101
       source: .vuepress/dist/*
