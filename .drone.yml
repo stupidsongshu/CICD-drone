@@ -19,11 +19,10 @@ steps:
     commands:
       - npm run build
       - ls -al
-      - echo $USER
-      - npm run user
-      # - rm -rf /root/docs
-      # - mkdir /root/docs
-      # - cp .vuepress/dist/* /root/docs
+      # - echo $USER
+      - rm -rf /root/docs
+      - mkdir /root/docs
+      - cp .vuepress/dist/* /root/docs
 
   # - name: rsync production
   #   image: drillster/drone-rsync
