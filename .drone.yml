@@ -39,11 +39,9 @@ steps:
       target:
         - /root/docs
       rm: true
-      key:
-        from_secret: rsync_key
       secrets:
         - source: deploy_key
-          target: rsync_key
+          target: ssh_key
 
   # - name: rsync production
   #   image: drillster/drone-rsync
