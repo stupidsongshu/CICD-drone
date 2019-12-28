@@ -18,6 +18,8 @@ steps:
     image: node:alpine
     commands:
       - npm run build
+      - ls -al
+      - who
       - rm -rf /root/docs
       - mkdir /root/docs
       - cp .vuepress/dist/* /root/docs
