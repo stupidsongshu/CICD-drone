@@ -38,6 +38,9 @@ steps:
         - .vuepress/dist/*
       target:
         - /root/docs
+      rm: true
+      key:
+        from_secret: rsync_key
       secrets:
         - source: deploy_key
           target: rsync_key
