@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo test...",
     "dev": "vuepress dev .",
-    "build": "vuepress build ."
+    "build": "vuepress build .",
+    "user": "echo $USER"
   },
   "keywords": [],
   "author": "",

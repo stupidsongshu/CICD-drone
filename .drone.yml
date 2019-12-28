@@ -20,6 +20,7 @@ steps:
       - npm run build
       - ls -al
       - echo $USER
+      - npm run user
       # - rm -rf /root/docs
       # - mkdir /root/docs
       # - cp .vuepress/dist/* /root/docs
