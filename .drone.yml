@@ -18,6 +18,9 @@ steps:
     image: node:alpine
     commands:
       - npm run build
+      - rm -rf /root/docs
+      - mkdir /root/docs
+      - cp .vuepress/dist/* /root/docs
 
   # - name: rsync production
   #   image: drillster/drone-rsync
@@ -31,9 +34,3 @@ steps:
   #     source: .vuepress/dist/*
   #     target: /root/docs
   #     secrets: [ rsync_key ]
-
-  - name: deliver
-    commands:
-      - rm -rf /root/docs
-      - mkdir /root/docs
-      - cp .vuepress/dist/* /root/docs
