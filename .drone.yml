@@ -19,14 +19,21 @@ steps:
     commands:
       - npm run build
 
-  - name: rsync production
-    image: drillster/drone-rsync
-    environment:
-      RSYNC_KEY:
-        from_secret: rsync_key
-    settings:
-      hosts:
-        - 111.229.81.101
-      source: .vuepress/dist/*
-      target: /root/docs
-      secrets: [ rsync_key ]
+  # - name: rsync production
+  #   image: drillster/drone-rsync
+  #   environment:
+  #     RSYNC_KEY:
+  #       from_secret: rsync_key
+  #   settings:
+  #     user: root
+  #     hosts:
+  #       - 111.229.81.101
+  #     source: .vuepress/dist/*
+  #     target: /root/docs
+  #     secrets: [ rsync_key ]
+
+  - name: deliver
+    commands:
+      - rm -rf /root/docs
+      - mkdir /root/docs
+      - cp .vuepress/dist/* /root/docs
