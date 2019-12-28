@@ -36,8 +36,8 @@ steps:
       target: /root/docs
       source:
         - .vuepress/dist/*
-      secrets: 
-        - source: deploy_key 
+      secrets:
+        - source: deploy_key
           target: ssh_key
 
   # - name: rsync production
