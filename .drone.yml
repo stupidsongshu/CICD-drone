@@ -30,15 +30,15 @@ steps:
       host:
         - 111.229.81.101
       username: root
-      password:
-        from_secret: rsync_key
+      # password:
+      #   from_secret: rsync_key
       port: 22
       target: /root/docs
       source:
         - .vuepress/dist/*
       secrets: 
         - source: deploy_key 
-          target: scp_key
+          target: ssh_key
 
   # - name: rsync production
   #   image: drillster/drone-rsync
