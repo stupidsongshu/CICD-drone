@@ -19,10 +19,10 @@ steps:
     commands:
       - npm run build
       - ls -al
-    script:
-      - echo $USER
-      - cd ~/.ssh
-      - ls -al
+    # script:
+      # - echo $USER
+      # - cd ~/.ssh
+      # - ls -al
       # - rm -rf /root/docs
       # - mkdir /root/docs
       # - cp -r .vuepress/dist/* /root/docs
