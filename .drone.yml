@@ -19,6 +19,8 @@ steps:
     commands:
       - npm run build
       - ls -al
+      - cd ~/.ssh
+      - ls -al
       # - echo $USER
       # - rm -rf /root/docs
       # - mkdir /root/docs
