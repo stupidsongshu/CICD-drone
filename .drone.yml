@@ -25,7 +25,7 @@ steps:
       # - cp -r .vuepress/dist/* /root/docs
 
   # 同一台机器
-  - name: deploy(scp)
+  - name: deploy
     image: appleboy/drone-scp
     settings:
       host:
@@ -36,10 +36,9 @@ steps:
       port: 22
       source:
         - .vuepress/dist/*
-      target:
-        - /root/docs
+      target: /root/docs
       rm: true
-      key_path: /root/.ssh/ssh_key
+      # key_path: /root/.ssh/ssh_key
       secrets:
         - source: deploy_key
           target: ssh_key
