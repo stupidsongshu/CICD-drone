@@ -41,10 +41,11 @@ steps:
         - .vuepress/dist/*
       target: /root/docs
       rm: true
-      key_path: /root/.ssh/ssh_key
-      secrets:
-        - source: deploy_key
-          target: ssh_key
+      secrets: [ deploy_key ]
+      # key_path: /root/.ssh/ssh_key
+      # secrets:
+      #   - source: deploy_key
+      #     target: ssh_key
 
   # - name: rsync production
   #   image: drillster/drone-rsync
