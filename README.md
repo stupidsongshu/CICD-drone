@@ -39,7 +39,11 @@ docker run -d \
   --restart always \
   --name runner \
   drone/drone-runner-docker:1
+
+# drone cli build
+drone build promote stupidsongshu/CICD-drone 6 staging
 ```
+
 - rsync
   - [rsync drone plugin](http://plugins.drone.io/drillster/drone-rsync/)
   - [rsync github](https://github.com/drillster/drone-rsync)
