@@ -20,9 +20,9 @@ steps:
       - npm run build
       - ls -al
     script:
+      - echo $USER
       - cd ~/.ssh
       - ls -al
-      # - echo $USER
       # - rm -rf /root/docs
       # - mkdir /root/docs
       # - cp -r .vuepress/dist/* /root/docs
@@ -41,11 +41,11 @@ steps:
         - .vuepress/dist/*
       target: /root/docs
       rm: true
-      secrets: [ deploy_key ]
+      # secrets: [ deploy_key ]
       # key_path: /root/.ssh/ssh_key
-      # secrets:
-      #   - source: deploy_key
-      #     target: ssh_key
+      secrets:
+        - source: deploy_key
+          target: ssh_key
 
   # - name: rsync production
   #   image: drillster/drone-rsync
